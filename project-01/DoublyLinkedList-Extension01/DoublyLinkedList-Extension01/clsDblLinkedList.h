@@ -14,9 +14,7 @@ class clsDblLinkedList
             Node* next;
             Node* prev;
         };
-
         Node* head = NULL;
-
         void InsertAtBeginning(T value)
         {
 
@@ -34,8 +32,6 @@ class clsDblLinkedList
 
 
         }
-
-        
         void PrintList()
 
         {
@@ -49,6 +45,22 @@ class clsDblLinkedList
 
 
         }
+        Node* Find(T Value)
+        {
+            Node* Current = head;
+            while (Current != NULL) {
+
+                if (Current->value == Value)
+                    return Current;
+
+                Current = Current->next;
+            }
+
+            return NULL;
+
+        }
+
+
 
 
 

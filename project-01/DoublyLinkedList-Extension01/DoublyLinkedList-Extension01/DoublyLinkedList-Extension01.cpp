@@ -10,5 +10,18 @@ int main()
 	MydblLinkedList.InsertAtBeginning(20);
 	MydblLinkedList.InsertAtBeginning(10);
 	MydblLinkedList.PrintList();
+
+	clsDblLinkedList<int>::Node* N1=MydblLinkedList.Find(10);
+	if(N1!=NULL)
+	{
+		cout << "Founded\n";
+	}
+	else
+	{
+		cout << "Not Found \n";
+	}
+
+
+
 }
 
