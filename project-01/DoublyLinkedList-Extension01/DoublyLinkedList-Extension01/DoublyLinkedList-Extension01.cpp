@@ -20,6 +20,9 @@ int main()
 	{
 		cout << "Not Found \n";
 	}
+	MydblLinkedList.InsertAfter(N1,40);
+	cout << "\nList After Insert :\n";
+	MydblLinkedList.PrintList();
 
 
 

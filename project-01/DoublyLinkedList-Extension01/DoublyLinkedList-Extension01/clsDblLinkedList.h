@@ -59,6 +59,20 @@ class clsDblLinkedList
             return NULL;
 
         }
+        void InsertAfter(Node* current, T value) {
+
+            Node* newNode = new Node();
+            newNode->value = value;
+            newNode->next = current->next;
+            newNode->prev = current;
+
+            if (current->next != NULL) {
+                current->next->prev = newNode;
+            }
+            current->next = newNode;
+
+
+        }
 
 
 
