@@ -5,44 +5,50 @@ using namespace std;
 int main()
 {
    
-	clsDblLinkedList<int>	MydblLinkedList;
-	MydblLinkedList.InsertAtBeginning(30);
-	MydblLinkedList.InsertAtBeginning(20);
-	MydblLinkedList.InsertAtBeginning(10);
-	MydblLinkedList.PrintList();
+    clsDblLinkedList <int> MydblLinkedList;
 
-	clsDblLinkedList<int>::Node* N1=MydblLinkedList.Find(30);
-	if(N1!=NULL)
-	{
-		cout << "Founded\n";
-	}
-	else
-	{
-		cout << "Not Found \n";
-	}
-	MydblLinkedList.InsertAfter(N1,40);
-	cout << "\nList After Insert :\n";
-	MydblLinkedList.PrintList();
+    MydblLinkedList.InsertAtBeginning(5);
+    MydblLinkedList.InsertAtBeginning(4);
+    MydblLinkedList.InsertAtBeginning(3);
+    MydblLinkedList.InsertAtBeginning(2);
+    MydblLinkedList.InsertAtBeginning(1);
 
-	MydblLinkedList.InsertAtEnd(50);
-	MydblLinkedList.InsertAtEnd(60);
-	MydblLinkedList.InsertAtEnd(70);
-	cout << "\nList After InsertAtEnd :\n";
-	MydblLinkedList.PrintList();
-	MydblLinkedList.DeleteNode(N1);
-	cout << "\nList After Delete Node :\n";
-	MydblLinkedList.PrintList();
-	MydblLinkedList.DeleteFirstNode();
-	cout << "\nList After Delete First Node :\n";
-	MydblLinkedList.PrintList();
-	
+    cout << "\nLinked List Contenet:\n";
+    MydblLinkedList.PrintList();
 
+    clsDblLinkedList<int>::Node* N1 = MydblLinkedList.Find(2);
 
+    if (N1 != NULL)
+        cout << "\nNode with value 2 is Found :-)\n";
+    else
+        cout << "\nNode Is not found :-(\n";
 
+    MydblLinkedList.InsertAfter(N1, 500);
+    cout << "\nAfter Inserting 500 after 2:\n";
+    MydblLinkedList.PrintList();
 
+    MydblLinkedList.InsertAtEnd(700);
+    cout << "\nAfter Inserting 700 at end:\n";
+    MydblLinkedList.PrintList();
 
+    clsDblLinkedList<int>::Node* N2 = MydblLinkedList.Find(4);
+    MydblLinkedList.DeleteNode(N2);
+    cout << "\nAfter Deleting 4:\n";
+    MydblLinkedList.PrintList();
 
+    MydblLinkedList.DeleteFirstNode();
+    cout << "\nAfter Deleting First Node:\n";
+    MydblLinkedList.PrintList();
 
+    cout << "\nAfter Deleting Last Node:\n";
+    MydblLinkedList.DeleteLastNode();
+    MydblLinkedList.PrintList();
+
+    system("pause");
+    return 0;
 
 }
+
+
+
 
