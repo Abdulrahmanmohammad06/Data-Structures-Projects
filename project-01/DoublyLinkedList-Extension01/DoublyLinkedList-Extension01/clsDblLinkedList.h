@@ -115,6 +115,19 @@ class clsDblLinkedList
 
 
         }
+        void DeleteFirstNode() {
+
+
+            Node* current = head;
+            if (head == NULL)return;
+            head = head->next;
+            delete current;
+
+
+
+
+        }
+
 
 
 

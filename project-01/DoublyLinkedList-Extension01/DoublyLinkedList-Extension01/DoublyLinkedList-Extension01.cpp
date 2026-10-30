@@ -32,7 +32,10 @@ int main()
 	MydblLinkedList.DeleteNode(N1);
 	cout << "\nList After Delete Node :\n";
 	MydblLinkedList.PrintList();
+	MydblLinkedList.DeleteFirstNode();
+	cout << "\nList After Delete First Node :\n";
 	MydblLinkedList.PrintList();
+	
 
 
 
