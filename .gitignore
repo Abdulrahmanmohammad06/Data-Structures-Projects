@@ -70,3 +70,11 @@ Testing/
 # Visual Studio
 .vs/
 
+# Build output
+Debug/
+Release/
+x64/
+x86/
+*.vcxproj.user
+
+
