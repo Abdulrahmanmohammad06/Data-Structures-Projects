@@ -73,6 +73,29 @@ class clsDblLinkedList
 
 
         }
+        void InsertAtEnd(T value) {
+
+            
+
+
+            Node* newNode = new Node();
+            newNode->value = value;
+            newNode->next = NULL;
+            if (head == NULL) {
+                newNode->prev = NULL;
+                head = newNode;
+            }
+            else {
+                Node* current = head;
+                while (current->next != NULL) {
+                    current = current->next;
+                }
+                current->next = newNode;
+                newNode->prev = current;
+            }
+
+
+        }
 
 
 
