@@ -96,6 +96,25 @@ class clsDblLinkedList
 
 
         }
+        void DeleteNode(Node* NodeToDelete) {
+
+        
+            if (head == NULL || NodeToDelete == NULL) {
+                return;
+            }
+            if (head == NodeToDelete) {
+                head = NodeToDelete->next;
+            }
+            if (NodeToDelete->next != NULL) {
+                NodeToDelete->next->prev = NodeToDelete->prev;
+            }
+            if (NodeToDelete->prev != NULL) {
+                NodeToDelete->prev->next = NodeToDelete->next;
+            }
+            delete NodeToDelete;
+
+
+        }
 
 
 

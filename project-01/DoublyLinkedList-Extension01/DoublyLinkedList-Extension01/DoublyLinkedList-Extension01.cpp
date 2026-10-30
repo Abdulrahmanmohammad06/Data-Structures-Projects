@@ -29,6 +29,11 @@ int main()
 	MydblLinkedList.InsertAtEnd(70);
 	cout << "\nList After InsertAtEnd :\n";
 	MydblLinkedList.PrintList();
+	MydblLinkedList.DeleteNode(N1);
+	cout << "\nList After Delete Node :\n";
+	MydblLinkedList.PrintList();
+	MydblLinkedList.PrintList();
+
 
 
 
