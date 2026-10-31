@@ -16,10 +16,10 @@ int main()
     cout << "\nLinked List Contenet:\n";
     MydblLinkedList.PrintList();
 
-    MydblLinkedList.UpdateItem(2, 500);
-
-    cout << "\nAfter Updating Item(2): " << "\n";
-    MydblLinkedList.PrintList();
+    MydblLinkedList.InsertAfter(4, 500);
+    cout << "\nAfter Insert: \n";
+	MydblLinkedList.PrintList();
+   
 
 
     system("pause");
