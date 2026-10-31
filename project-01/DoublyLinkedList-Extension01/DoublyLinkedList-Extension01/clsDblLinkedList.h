@@ -175,6 +175,18 @@ class clsDblLinkedList
             return (_size == 0) ? true : false;
         
         }
+        void Clear()
+        {
+         while(_size > 0)
+         {
+          
+             DeleteFirstNode();
+         }
+      
+        
+        
+        
+        }
 
 
 
