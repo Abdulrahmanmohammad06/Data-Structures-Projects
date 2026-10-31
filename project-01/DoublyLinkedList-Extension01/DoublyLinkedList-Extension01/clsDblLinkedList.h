@@ -6,6 +6,7 @@ class clsDblLinkedList
 	{
     protected:
 	 int _size = 0;
+
     public:
 
         class Node
@@ -232,6 +233,16 @@ class clsDblLinkedList
             return current;
            
         }
+        T GetItem(int Index)
+        {
 
-};
+            Node* ItemNode = GetNode(Index);
+
+            if (ItemNode == NULL)
+                return NULL;
+            else
+                return ItemNode->value;
+
+        }
+ };
 
