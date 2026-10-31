@@ -210,15 +210,28 @@ class clsDblLinkedList
 
         
         }
+        Node *GetNode(int Index)
+        {
+            int counter = 0;
+            if(Index<0||Index>_size-1) 
+            {
+                return NULL;
+            }
+            Node* current = head;
+            while(current!=NULL&&current->next!=NULL)  
+            {
+            
+                if (counter == Index)
+                {
+                    break;
+                }
+                current = current->next;
+                counter++;
+            }
 
-
-
-
-
-
-
-
-
+            return current;
+           
+        }
 
 };
 
