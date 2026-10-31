@@ -4,6 +4,9 @@ using namespace std;
 template <class T>
 class clsDblLinkedList
 	{
+    protected:
+	 int _size = 0;
+
     public:
 
         class Node
@@ -29,7 +32,7 @@ class clsDblLinkedList
                 head->prev = newNode;
             }
             head = newNode;
-
+            _size++;
 
         }
         void PrintList()
@@ -70,6 +73,7 @@ class clsDblLinkedList
                 current->next->prev = newNode;
             }
             current->next = newNode;
+            _size++;
 
 
         }
@@ -84,14 +88,18 @@ class clsDblLinkedList
             if (head == NULL) {
                 newNode->prev = NULL;
                 head = newNode;
+               
             }
             else {
                 Node* current = head;
                 while (current->next != NULL) {
                     current = current->next;
+                   
                 }
                 current->next = newNode;
                 newNode->prev = current;
+                _size++;
+
             }
 
 
@@ -112,6 +120,7 @@ class clsDblLinkedList
                 NodeToDelete->prev->next = NodeToDelete->next;
             }
             delete NodeToDelete;
+            _size--;
 
 
         }
@@ -129,6 +138,7 @@ class clsDblLinkedList
                 head->prev = NULL;
             }
             delete temp;
+            _size--;
 
         }
         void DeleteLastNode() {
@@ -155,17 +165,108 @@ class clsDblLinkedList
             Node* temp = current->next;
             current->next = NULL;
             delete temp;
+            _size--;
 
         }
+		int Size() {
+			return _size;
+		}
+        bool IsEmpty() 
+        {
+            return (_size == 0) ? true : false;
+        
+        }
+        void Clear()
+        {
+         while(_size > 0)
+         {
+          
+             DeleteFirstNode();
+         }
+      
+        
+        
+        
+        }
+        void Reverse()
+        {
+            Node* current = head;
+            Node* temp = NULL;
+            while(current!=NULL)
+            {
+                temp = current->prev;
+                current->prev = current->next;
+                current->next = temp;
+                current = current->prev;
 
+            
+            
+            
+            }
+            if(temp!=NULL)
+            {
+                head = temp->prev;
+            }
+        
 
+        
+        }
+        Node *GetNode(int Index)
+        {
+            int counter = 0;
+            if(Index<0||Index>_size-1) 
+            {
+                return NULL;
+            }
+            Node* current = head;
+            while(current!=NULL&&current->next!=NULL)  
+            {
+            
+                if (counter == Index)
+                {
+                    break;
+                }
+                current = current->next;
+                counter++;
+            }
 
+            return current;
+           
+        }
+        T GetItem(int Index)
+        {
 
+            Node* ItemNode = GetNode(Index);
 
+            if (ItemNode == NULL)
+                return NULL;
+            else
+                return ItemNode->value;
 
+        }
+        bool UpdateItem(int Index, T NewValue)
+        {
+            Node* ItemNode = GetNode(Index);
 
+            if (ItemNode != NULL)
+            {
+                ItemNode->value = NewValue;
+                return true;
+            }
+            else
+                return false;
 
-
-
+        }
+        bool InsertAfter(int Index, T value)
+        {
+            Node* ItemNode = GetNode(Index);
+            if (ItemNode != NULL)
+            {
+                InsertAfter(ItemNode, value);
+                return true;
+            }
+            else
+                return false;
+        }
 };
 
