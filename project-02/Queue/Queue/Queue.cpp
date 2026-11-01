@@ -20,6 +20,29 @@ int main()
 
 	cout << "\nAfter Pop : ";
 	MyQueue.Print();
+	cout << "\n\nItem(2) : " << MyQueue.GetItem(2) << endl;
+	MyQueue.Reverse();
+	MyQueue.Print();
+	MyQueue.Update(2, 200);
+	MyQueue.Print();
+	cout << "\nInsert after : \n";
+	MyQueue.InsertAfter(2, 300);
+	MyQueue.Print();
+
+	cout << "\nInsert Front : \n";
+	MyQueue.InsertAtFront(5);
+	MyQueue.Print();
+	cout << "\nInsert Back : \n";
+	MyQueue.InsertAtBack(400);
+	MyQueue.Print();
+	//MyQueue.Clear();
+	if (MyQueue.IsEmpty()) 
+		cout << "Yes"<<endl;
+	else 
+		cout << "No"<<endl;
+
+
+
 
 
 

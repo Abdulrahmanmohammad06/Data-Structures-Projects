@@ -32,6 +32,30 @@ public:
 	{
 		return _MyList.IsEmpty();
 	}
+	T GetItem(T item) {
+		return _MyList.GetItem(item);
+	}
+	void Reverse() {
+		_MyList.Reverse();
+	}
+	void Update(int index,T newValue) {
+		_MyList.UpdateItem(index, newValue);
+	}
+	void InsertAfter(int Index, T value) {
+		_MyList.InsertAfter(Index, value);
+	}
+	void InsertAtFront(T value) {
+		_MyList.InsertAtBeginning(value);
+	}
+	void InsertAtBack(T value) {
+		_MyList.InsertAtEnd(value);
+
+	}
+	void Clear() {
+		_MyList.Clear();
+	}
+
+
 
 
 
