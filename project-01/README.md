@@ -8,4 +8,4 @@ with different methods and operations.
 - C++
 
 ## Project Status
-In Progress
+Completed
