@@ -98,10 +98,10 @@ class clsDblLinkedList
                 }
                 current->next = newNode;
                 newNode->prev = current;
-                _size++;
+                
 
             }
-
+           _size++;
 
         }
         void DeleteNode(Node* NodeToDelete) {
