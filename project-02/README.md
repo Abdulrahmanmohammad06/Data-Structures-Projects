@@ -7,4 +7,4 @@ Implementing a Queue data structure in C++.
 - C++
 
 ## Project Status
-In Progress
+Completed
