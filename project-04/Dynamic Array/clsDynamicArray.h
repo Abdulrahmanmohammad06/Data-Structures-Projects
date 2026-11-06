@@ -5,39 +5,40 @@ using namespace std;
 template <typename T>
 class clsDynamicArray {
 protected:
-	int _size = 0;
+	int _Size = 0;
+	T* _TempArray;
 public:
-	T* Originalarray;
+	T* OriginalArray;
 
 	clsDynamicArray(int size=0)
 	{
 	
 		if (size < 0)
 			size = 0;
-		 _size =size;
+		_Size =size;
 
-		Originalarray = new T[size];
+		 OriginalArray = new T[_Size];
 	
 	}
 	~clsDynamicArray()
 	{
 	
-		delete [] Originalarray;
+		delete [] OriginalArray;
 	}
 	bool SetItem(int index,T value)
 	{
-		if (index >= _size || index < 0) {
+		if (index >= _Size || index < 0) {
 			return 0;
 		}
-		Originalarray[index] = value;
+		OriginalArray[index] = value;
 		return 1;
 	}
 	int Size() {
-		return _size;
+		return _Size;
 	}
 	bool IsEmpty() {
 
-		if (_size == 0) {
+		if (_Size == 0) {
 			return 1;
 		}
 		else
@@ -45,12 +46,37 @@ public:
 
 
 	}		  
-	void Print() {
-		for (int i = 0; i <_size; i++) {
-			cout << Originalarray[i] << " ";
+	void PrintList() {
+		for (int i = 0; i <_Size; i++) {
+			cout << OriginalArray[i] << " ";
 		}
 		cout << endl;
 	}
+	void Resize(int NewSize)
+	{
+
+		if (NewSize < 0)
+		{
+			NewSize = 0;
+		};
+
+		_TempArray = new T[NewSize];
+
+		if (NewSize < _Size)
+			_Size = NewSize;
+
+		for (int i = 0; i < _Size; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
+
+		_Size = NewSize;
+
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+
+	}
+
 
 
 
