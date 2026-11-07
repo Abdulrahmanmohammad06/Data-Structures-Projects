@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bae640bf-88b9-4165-91e4-f0702be9f123}</ProjectGuid>
+    <ProjectGuid>{E6E77FDE-0EC9-A7AD-EF11-97DFA8759487}</ProjectGuid>
     <RootNamespace>DynamicArray</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
