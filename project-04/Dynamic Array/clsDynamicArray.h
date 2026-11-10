@@ -133,7 +133,7 @@ public:
 		return true;
 
 	}
-	void DelteFirstItem()
+	void DeleteFirstItem()
 	{
 		DeleteItemAt(0);
 	}
