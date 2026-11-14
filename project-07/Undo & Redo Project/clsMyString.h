@@ -20,10 +20,14 @@ public:
 
  __declspec(property(get = Get, put = Set)) string Value;
  void Undo() {
-	 _Redo.push(_value);
-	 _value = _Undo.top();
-	 _Undo.pop();
+	 if (!(_Undo.empty()))
+	 {
+		 _Redo.push(_value);
+		 _value = _Undo.top();
+		 _Undo.pop();
+	 }
   }
+ 
 
 
 
