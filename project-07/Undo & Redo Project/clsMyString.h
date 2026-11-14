@@ -27,6 +27,15 @@ public:
 		 _Undo.pop();
 	 }
   }
+ void Redo() {
+	 if(!(_Redo.empty()))
+	 {
+	   _Undo.push(_value);
+	   _value = _Redo.top();
+	   _Redo.pop();
+	 }
+
+ }
  
 
 
